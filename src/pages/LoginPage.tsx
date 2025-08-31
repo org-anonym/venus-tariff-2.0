@@ -104,10 +104,7 @@ const LoginPage: React.FC = () => {
             </Button>
             
             <Typography variant="body2" color="textSecondary" align="center" sx={{ mt: 2 }}>
-              Demo Credentials: Use any email from mock data with password "password"
-            </Typography>
-            <Typography variant="body2" color="textSecondary" align="center">
-              Example: admin@venustariff.com / password
+              Demo Credentials: Use any email from mock data with password
             </Typography>
           </Box>
         </Paper>

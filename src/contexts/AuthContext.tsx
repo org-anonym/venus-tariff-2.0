@@ -16,6 +16,8 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
+const mockPassword = process.env.REACT_APP_MOCK_PASSWORD || 'password';
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
@@ -23,7 +25,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // Mock authentication - in real app this would call an API
     const foundUser = mockUsers.find(u => u.email === credentials.email);
     
-    if (foundUser && credentials.password === 'password') { // Mock password
+    if (foundUser && credentials.password === mockPassword) { // Mock password
       setUser(foundUser);
       localStorage.setItem('user', JSON.stringify(foundUser));
     } else {
